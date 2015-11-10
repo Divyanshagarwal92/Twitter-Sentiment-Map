@@ -17,3 +17,9 @@ using the twittmap:
 * the number in the buttons are number of tweets (fewer for sentiment analysis since we have sentiment on fewer of those). if you leave the page open you should see the numbers in the buttons increasing in real time and the map adding points in real time (harder to see than the numbers going up) 
 * to see the sentiment heatmap, click a positive and/or negative sentiment and any number of keywords
 # Twitter-Sentiment-Map
+
+#Contributors:
+Divyansh Agarwal
+Prateek Goel
+Priya Venkat
+Josh Plotkin
