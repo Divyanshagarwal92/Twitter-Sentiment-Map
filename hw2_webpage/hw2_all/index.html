@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<title>TwittMap</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+</head>
+<html ng-app = "twittmap">
+<body>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/twittmap.css" />
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="angular/twittmap.js"></script>
+<script src="js/socket.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="/js/leaflet-heat.js"></script>
+
+<div class="container">
+	<div ng-controller = "MapController">
+		<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px; padding-top: 10px; ">
+			<div class="row">
+				<div class="col-md-4">
+				    <font style="font-size: 36pt; color:azure; padding-left:30px; padding-right:5px" data-toggle="tooltip" data-placement="left" title="TwittMap:
+				    - Click the bottons to toggle data points
+				    - Tweet counts are listed in parentheses
+				    - Zoom and pan the map to get a closer look
+				    - Tweets are being populated periodically throughout the day
+				    ">TwittMap</font>
+				    <span class = 'glyphicon glyphicon-info-sign' STYLE="color: azure; font-size: 30pt;" data-toggle="tooltip" data-placement="left" title="TwittMap:
+				    - Click the bottons to toggle data points
+				    - Tweet counts are listed in parentheses
+				    - Zoom and pan the map to get a closer look
+				    - Tweets are being populated periodically throughout the day
+				    "></span>    
+			   </div>
+			  <div class="col-md-4">
+				  <button type="button" class="btn btn-default navbar-btn" ng-click="toggle()">{{getButtonDesc()}}</button>
+			  </div>
+			</div>
+		</nav>
+
+	  <p align = 'center'>
+	    <button type="button" class="btn btn-default" 
+	    	id ='Ebola' ng-show = "getStatus()">Ebola</button>
+
+	    <button type="button" class="btn btn-default" 
+	    	id ='Ottawa' ng-show = "getStatus()">Ottawa</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='Nadella'ng-show = "getStatus()">Nadella</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='AWS' ng-show = "getStatus()">AWS</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='Heroku' ng-show = "getStatus()">Heroku</button>
+	  </p>
+
+	  <p align = 'center'>
+	    <button type="button" class="btn btn-default" 
+	    	id ='posSentiment' ng-hide = "getStatus()">Positive Sentiment</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='negSentiment' ng-hide = "getStatus()">Negative Sentiment</button>
+	  </p>  
+
+	  <p align = 'center'>
+	    <button type="button" class="btn btn-default" 
+	    	id ='EbolaHeat' ng-hide = "getStatus()">Ebola</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='OttawaHeat' ng-hide = "getStatus()">Ottawa</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='NadellaHeat' ng-hide = "getStatus()">Nadella</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='AWSHeat' ng-hide = "getStatus()">AWS</button>
+	    <button type="button" class="btn btn-default" 
+	    	id ='HerokuHeat' ng-hide = "getStatus()">Heroku</button>
+	  </p>  
+
+		<!-- ANGULAR CODE -->
+		<div ng-controller = "DataController" >
+			<div id ="container" ng-show = "getStatus()">
+			  	<scatter-map></scatter-map>
+			</div>
+			<div id="map" class='col-md-4' ng-hide = "getStatus()">
+				<heat-map></heat-map>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

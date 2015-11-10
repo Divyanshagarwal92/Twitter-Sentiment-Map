@@ -1,0 +1,35 @@
+524512259725606912
+
+524565990299160577
+
+def insert_into_sqs(sqs_queue,start_id_str,end_id_str,q):
+#Creating Msg - It contains start_id, end_id of the tweets and the search term
+    m = Message()
+    msg = start_id_str + '|' + end_id_str + '|' + q
+    print msg
+    m.set_body( msg );
+    sqs_queue.write(m)
+    print "after sqs write"
+
+524512259725606912|524565990299160577|ebola
+523235316769910785|523506853955637248|ottawa
+
+524566105109438465|528844540804075521|ebola
+523507753286107137|528190564081344513|ottawa
+
+select count(*) from tweets
+where polarity in ('positive','negative','neutral')
+and search_string in ('nadella', 'aws', 'ebola', 'heroku', 'ottawa');
+866
+
+priyavenkat225@gmail.com 
+8503df13063734a9a488792804efa78a8f41ab19
+
+josh
+07224c2ecbcd3e95f8d3d602afa5a911dc380bc2
+
+priyaprasad225@gmail.com
+c43915d2444ed874f9c3fa1ca7f9c9b73d3dfe1c
+
+maya.a2001@yahoo.com
+dc851d5036d2c927eaac024b54df76c93b93cf48

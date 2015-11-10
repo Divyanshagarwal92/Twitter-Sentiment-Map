@@ -1,0 +1,45 @@
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/home/ec2-user/hw2_all/node_modules/mysql/lib/protocol/Protocol.js:103:13)
+    at Socket.<anonymous> (/home/ec2-user/hw2_all/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickDomainCallback (node.js:463:13)
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/home/ec2-user/hw2_all/node_modules/mysql/lib/protocol/Protocol.js:103:13)
+    at Socket.<anonymous> (/home/ec2-user/hw2_all/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickDomainCallback (node.js:463:13)
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/home/ec2-user/hw2_all/node_modules/mysql/lib/protocol/Protocol.js:103:13)
+    at Socket.<anonymous> (/home/ec2-user/hw2_all/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.emit (events.js:117:20)
+    at _stream_readable.js:943:16
+    at process._tickDomainCallback (node.js:463:13)
+
+/home/ec2-user/hw2_all/app.js:78
+));
+ ^
+SyntaxError: Unexpected token )
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:906:3
+
+/home/ec2-user/hw2_all/app.js:63
+));
+ ^
+SyntaxError: Unexpected token )
+    at Module._compile (module.js:439:25)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:906:3
